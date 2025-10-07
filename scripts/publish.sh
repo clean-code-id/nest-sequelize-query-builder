@@ -42,12 +42,17 @@ fi
 
 print_success "Git working directory is clean"
 
+# Calculate next versions
+NEXT_PATCH=$(cd packages/core && npm version patch --no-git-tag-version 2>/dev/null && node -p "require('./package.json').version" && npm version ${CURRENT_VERSION} --no-git-tag-version 2>/dev/null)
+NEXT_MINOR=$(cd packages/core && npm version minor --no-git-tag-version 2>/dev/null && node -p "require('./package.json').version" && npm version ${CURRENT_VERSION} --no-git-tag-version 2>/dev/null)
+NEXT_MAJOR=$(cd packages/core && npm version major --no-git-tag-version 2>/dev/null && node -p "require('./package.json').version" && npm version ${CURRENT_VERSION} --no-git-tag-version 2>/dev/null)
+
 # Ask for version bump type
 echo ""
 print_info "Select version bump type:"
-echo "  1) patch (${CURRENT_VERSION} -> $(npm version --no-git-tag-version patch --prefix packages/core 2>/dev/null && npm version --no-git-tag-version ${CURRENT_VERSION} --prefix packages/core 2>/dev/null && npm version patch --dry-run --prefix packages/core 2>/dev/null | grep -oP '(?<=to ).*'))"
-echo "  2) minor (${CURRENT_VERSION} -> $(npm version minor --dry-run --prefix packages/core 2>/dev/null | grep -oP '(?<=to ).*'))"
-echo "  3) major (${CURRENT_VERSION} -> $(npm version major --dry-run --prefix packages/core 2>/dev/null | grep -oP '(?<=to ).*'))"
+echo "  1) patch (${CURRENT_VERSION} -> ${NEXT_PATCH})"
+echo "  2) minor (${CURRENT_VERSION} -> ${NEXT_MINOR})"
+echo "  3) major (${CURRENT_VERSION} -> ${NEXT_MAJOR})"
 echo "  4) custom"
 echo "  5) no version bump (publish current version)"
 echo ""
