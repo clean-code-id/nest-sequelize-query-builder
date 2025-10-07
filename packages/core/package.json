@@ -21,7 +21,15 @@
     "filtering",
     "orm"
   ],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleancode-id/nestjs-sequelize-query-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cleancode-id/nestjs-sequelize-query-builder/issues"
+  },
+  "homepage": "https://github.com/cleancode-id/nestjs-sequelize-query-builder#readme",
+  "author": "Clean Code Indonesia <https://cleancode.id>",
   "license": "MIT",
   "peerDependencies": {
     "@nestjs/common": "^10.0.0",
