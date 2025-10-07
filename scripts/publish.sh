@@ -42,10 +42,11 @@ fi
 
 print_success "Git working directory is clean"
 
-# Calculate next versions
-NEXT_PATCH=$(cd packages/core && npm version patch --no-git-tag-version 2>/dev/null && node -p "require('./package.json').version" && npm version ${CURRENT_VERSION} --no-git-tag-version 2>/dev/null)
-NEXT_MINOR=$(cd packages/core && npm version minor --no-git-tag-version 2>/dev/null && node -p "require('./package.json').version" && npm version ${CURRENT_VERSION} --no-git-tag-version 2>/dev/null)
-NEXT_MAJOR=$(cd packages/core && npm version major --no-git-tag-version 2>/dev/null && node -p "require('./package.json').version" && npm version ${CURRENT_VERSION} --no-git-tag-version 2>/dev/null)
+# Calculate next versions using semver logic
+IFS='.' read -r MAJOR MINOR PATCH <<< "${CURRENT_VERSION}"
+NEXT_PATCH="${MAJOR}.${MINOR}.$((PATCH + 1))"
+NEXT_MINOR="${MAJOR}.$((MINOR + 1)).0"
+NEXT_MAJOR="$((MAJOR + 1)).0.0"
 
 # Ask for version bump type
 echo ""
