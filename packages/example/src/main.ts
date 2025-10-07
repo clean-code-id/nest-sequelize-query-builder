@@ -16,8 +16,8 @@ async function bootstrap() {
   console.log('  GET http://localhost:3000/users?sort=name');
   console.log('  GET http://localhost:3000/users?sort=-postCount');
   console.log('\n📄 Get paginated users (page size = 3):');
-  console.log('  GET http://localhost:3000/users?sort=name&page=1');
-  console.log('  GET http://localhost:3000/users?sort=-postCount&page=2');
+  console.log('  GET http://localhost:3000/users?sort=name&page=1&size=3');
+  console.log('  GET http://localhost:3000/users?sort=-postCount&page=2&size=3');
 }
 
 async function seedData() {
@@ -28,7 +28,7 @@ async function seedData() {
 
   const users = await User.bulkCreate([
     { name: 'Alice Johnson', email: 'alice@example.com', age: 28 },
-    { name: 'Aan Smith', email: 'bob@example.com', age: 34 },
+    { name: 'Aan Smith', email: 'smith.aan@example.com', age: 34 },
     { name: 'Diana Brown', email: 'diana.1@example.com', age: 22 },
     { name: 'Diana Brown', email: 'diana.2@example.com', age: 31 },
     { name: 'Eve Wilson', email: 'eve@example.com', age: 26 },

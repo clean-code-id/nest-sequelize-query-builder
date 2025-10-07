@@ -1,5 +1,5 @@
 {
-  "name": "@cleancode-id/nestjs-query-builder-workspace",
+  "name": "@cleancode-id/nestjs-sequelize-query-builder-workspace",
   "version": "0.1.0",
   "private": true,
   "workspaces": [
@@ -10,7 +10,9 @@
     "build": "npm run build --workspace=packages/core",
     "example:dev": "npm run start:dev --workspace=packages/example",
     "example:start": "npm run start --workspace=packages/example",
-    "install:all": "npm install"
+    "test": "npm run test --workspace=packages/core",
+    "publish:dry": "npm run publish:dry --workspace=packages/core",
+    "publish:prod": "npm run build && npm run publish:prod --workspace=packages/core"
   },
   "devDependencies": {}
 }

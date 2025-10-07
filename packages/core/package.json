@@ -1,5 +1,5 @@
 {
-  "name": "@cleancode-id/nestjs-query-builder",
+  "name": "@cleancode-id/nestjs-sequelize-query-builder",
   "version": "0.1.0",
   "description": "A NestJS query builder for Sequelize ORM with filtering, sorting, and more - inspired by Spatie Laravel Query Builder",
   "main": "dist/index.js",
@@ -9,7 +9,9 @@
     "watch": "tsc --watch",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "publish:dry": "npm publish --dry-run",
+    "publish:prod": "npm publish --access public"
   },
   "keywords": [
     "nestjs",
