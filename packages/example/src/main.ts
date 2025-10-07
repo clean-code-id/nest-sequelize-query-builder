@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { User } from './models/user.model';
-import { Post } from './models/post.model';
+import { User } from './user/user.model';
+import { Post } from './post/post.model';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -12,12 +12,12 @@ async function bootstrap() {
   await app.listen(3000);
   console.log('🚀 Application is running on: http://localhost:3000');
   console.log('\nTry these endpoints:');
+  console.log('\n📄 Get ALL users:');
   console.log('  GET http://localhost:3000/users?sort=name');
-  console.log('  GET http://localhost:3000/users?sort=-name');
-  console.log('  GET http://localhost:3000/users?sort=name,-createdAt');
-  console.log('  GET http://localhost:3000/users/recent');
-  console.log('  GET http://localhost:3000/users/paginated?page=1&perPage=5');
-  console.log('  GET http://localhost:3000/users/custom?sort=postCount');
+  console.log('  GET http://localhost:3000/users?sort=-postCount');
+  console.log('\n📄 Get paginated users (page size = 3):');
+  console.log('  GET http://localhost:3000/users?sort=name&page=1');
+  console.log('  GET http://localhost:3000/users?sort=-postCount&page=2');
 }
 
 async function seedData() {
@@ -29,8 +29,8 @@ async function seedData() {
   const users = await User.bulkCreate([
     { name: 'Alice Johnson', email: 'alice@example.com', age: 28 },
     { name: 'Aan Smith', email: 'bob@example.com', age: 34 },
-    { name: 'Diana Brown', email: 'charlie@example.com', age: 22 },
-    { name: 'Diana Brown', email: 'diana@example.com', age: 31 },
+    { name: 'Diana Brown', email: 'diana.1@example.com', age: 22 },
+    { name: 'Diana Brown', email: 'diana.2@example.com', age: 31 },
     { name: 'Eve Wilson', email: 'eve@example.com', age: 26 },
     { name: 'Frank Miller', email: 'frank@example.com', age: 45 },
     { name: 'Grace Lee', email: 'grace@example.com', age: 29 },

@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { UsersModule } from './users/users.module';
-import { User } from './models/user.model';
-import { Post } from './models/post.model';
+import { UserModule } from './user/user.module';
+import { PostModule } from './post/post.module';
+import { User } from './user/user.model';
+import { Post } from './post/post.model';
 
 @Module({
   imports: [
@@ -14,8 +15,8 @@ import { Post } from './models/post.model';
       synchronize: true,
       logging: false,
     }),
-    SequelizeModule.forFeature([User, Post]),
-    UsersModule,
+    UserModule,
+    PostModule,
   ],
 })
 export class AppModule {}

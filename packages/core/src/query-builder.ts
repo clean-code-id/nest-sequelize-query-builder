@@ -1,14 +1,14 @@
-import { FindOptions, Model, ModelCtor, Order } from 'sequelize';
+import { FindOptions, Model, ModelStatic, Order } from 'sequelize';
 import { AllowedSort, ParsedSort, QueryBuilderConfig, QueryParams } from './types';
 import { InvalidSortQueryException } from './exceptions/invalid-sort-query.exception';
 
 export class QueryBuilder<M extends Model> {
-  private model: ModelCtor<M>;
+  private model: ModelStatic<M>;
   private query: FindOptions<M>;
   private config: QueryBuilderConfig = {};
   private allowedSortsMap: Map<string, AllowedSort> = new Map();
 
-  private constructor(model: ModelCtor<M>, query: FindOptions<M> = {}) {
+  private constructor(model: ModelStatic<M>, query: FindOptions<M> = {}) {
     this.model = model;
     this.query = query;
   }
@@ -16,7 +16,7 @@ export class QueryBuilder<M extends Model> {
   /**
    * Create a new QueryBuilder instance
    */
-  static for<M extends Model>(model: ModelCtor<M>, query: FindOptions<M> = {}): QueryBuilder<M> {
+  static for<M extends Model>(model: ModelStatic<M>, query: FindOptions<M> = {}): QueryBuilder<M> {
     return new QueryBuilder(model, query);
   }
 
@@ -172,9 +172,12 @@ export class QueryBuilder<M extends Model> {
       offset,
     });
 
+    // Handle count when using GROUP BY (returns array) vs normal queries (returns number)
+    const total = Array.isArray(count) ? count.length : count;
+
     return {
       data: rows,
-      total: count,
+      total,
       page,
       perPage,
     };
