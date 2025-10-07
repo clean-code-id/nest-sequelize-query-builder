@@ -1,6 +1,6 @@
 {
   "name": "@cleancode-id/nestjs-sequelize-query-builder",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A NestJS query builder for Sequelize ORM with filtering, sorting, and more - inspired by Spatie Laravel Query Builder",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
