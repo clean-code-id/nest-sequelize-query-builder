@@ -1,6 +1,6 @@
 {
   "name": "@cleancode-id/nestjs-sequelize-query-builder-workspace",
-  "version": "0.1.0",
+  "version": "2.0.1",
   "private": true,
   "workspaces": [
     "packages/core",
@@ -14,6 +14,5 @@
     "publish:dry": "npm run publish:dry --workspace=packages/core",
     "publish:prod": "npm run build && npm run publish:prod --workspace=packages/core",
     "deploy": "bash scripts/publish.sh"
-  },
-  "devDependencies": {}
+  }
 }
