@@ -12,7 +12,8 @@
     "example:start": "npm run start --workspace=packages/example",
     "test": "npm run test --workspace=packages/core",
     "publish:dry": "npm run publish:dry --workspace=packages/core",
-    "publish:prod": "npm run build && npm run publish:prod --workspace=packages/core"
+    "publish:prod": "npm run build && npm run publish:prod --workspace=packages/core",
+    "deploy": "bash scripts/publish.sh"
   },
   "devDependencies": {}
 }
