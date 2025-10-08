@@ -116,13 +116,6 @@ print_success "Build completed"
 
 echo ""
 
-# Copy README to core package
-print_info "Copying README to package..."
-cp README.md packages/core/README.md
-print_success "README copied"
-
-echo ""
-
 # Dry run publish
 print_info "Running dry-run publish..."
 npm run publish:dry --workspace=packages/core
