@@ -303,8 +303,8 @@ See the [example app](./packages/example) for a complete working NestJS applicat
 
 ```bash
 # Clone and install
-git clone https://github.com/your-org/nestjs-sequelize-query-builder
-cd nestjs-sequelize-query-builder
+git clone https://github.com/clean-code-id/nest-sequelize-query-builder
+cd nest-sequelize-query-builder
 npm install
 
 # Run example app
@@ -354,7 +354,7 @@ The MIT License (MIT). Please see [License File](LICENSE) for more information.
 ## 💬 Support
 
 - Security vulnerabilities: [your-email@example.com]
-- Bugs and features: [Open an issue](https://github.com/your-org/nestjs-sequelize-query-builder/issues)
+- Bugs and features: [Open an issue](https://github.com/clean-code-id/nest-sequelize-query-builder/issues)
 
 ## 🙏 Acknowledgments
 

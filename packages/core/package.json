@@ -23,12 +23,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cleancode-id/nestjs-sequelize-query-builder.git"
+    "url": "git+https://github.com/clean-code-id/nest-sequelize-query-builder.git"
   },
   "bugs": {
-    "url": "https://github.com/cleancode-id/nestjs-sequelize-query-builder/issues"
+    "url": "https://github.com/clean-code-id/nest-sequelize-query-builder/issues"
   },
-  "homepage": "https://github.com/cleancode-id/nestjs-sequelize-query-builder#readme",
+  "homepage": "https://github.com/clean-code-id/nest-sequelize-query-builder#readme",
   "author": "Clean Code Indonesia <https://cleancode.id>",
   "license": "MIT",
   "peerDependencies": {

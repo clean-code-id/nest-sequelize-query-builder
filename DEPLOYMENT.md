@@ -179,5 +179,6 @@ npm run deploy
 ## Support
 
 For deployment issues, contact the maintainer or check:
+- GitHub Issues: https://github.com/clean-code-id/nest-sequelize-query-builder/issues
 - npm docs: https://docs.npmjs.com/cli/v10/commands/npm-publish
 - Semantic versioning: https://semver.org/
