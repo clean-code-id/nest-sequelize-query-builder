@@ -1,7 +1,7 @@
 # NestJS Sequelize Query Builder
 
-[![npm version](https://img.shields.io/npm/v/@cleancode-id/nestjs-sequelize-query-builder.svg)](https://www.npmjs.com/package/@cleancode-id/nestjs-sequelize-query-builder)
-[![npm downloads](https://img.shields.io/npm/dm/@cleancode-id/nestjs-sequelize-query-build.svg)](https://www.npmjs.com/package/@cleancode-id/nestjs-sequelize-query-builder)
+![npm version](https://img.shields.io/npm/v/@cleancode-id/nestjs-sequelize-query-builder)
+![npm downloads](https://img.shields.io/npm/dm/@cleancode-id/nestjs-sequelize-query-builder)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Build Sequelize queries from API requests with a clean, secure, and intuitive API. Inspired by [Spatie's Laravel Query Builder](https://github.com/spatie/laravel-query-builder).

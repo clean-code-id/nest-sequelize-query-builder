@@ -33,15 +33,6 @@ CURRENT_VERSION=$(node -p "require('./packages/core/package.json').version")
 print_info "Current version: ${CURRENT_VERSION}"
 echo ""
 
-# Check if git working directory is clean
-if [[ -n $(git status -s) ]]; then
-    print_error "Git working directory is not clean. Please commit or stash your changes."
-    git status -s
-    exit 1
-fi
-
-print_success "Git working directory is clean"
-
 # Calculate next versions using semver logic
 IFS='.' read -r MAJOR MINOR PATCH <<< "${CURRENT_VERSION}"
 NEXT_PATCH="${MAJOR}.${MINOR}.$((PATCH + 1))"
